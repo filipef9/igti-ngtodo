@@ -37,4 +37,18 @@ export class TodoListComponent {
       aDescription.trim() === ''
     );
   }
+
+  deleteTask(descriptionIndexToDelete: number): void {
+    if (
+      descriptionIndexToDelete < 0 ||
+      descriptionIndexToDelete >= this.tasks.length
+    ) {
+      return;
+    }
+
+    this.tasks = [
+      ...this.tasks.slice(0, descriptionIndexToDelete),
+      ...this.tasks.slice(descriptionIndexToDelete + 1),
+    ];
+  }
 }
