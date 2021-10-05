@@ -1,0 +1,13 @@
+<div>
+  <input #descriptionInput type="text" placeholder="Descrição da tarefa" />
+  <button (click)="addTask(descriptionInput.value)">Adicionar a tarefa</button>
+</div>
+
+<table>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>{{ task.description }}</td>
+      <td><input type="checkbox" [checked]="task.done" /></td>
+    </tr>
+  </tbody>
+</table>
